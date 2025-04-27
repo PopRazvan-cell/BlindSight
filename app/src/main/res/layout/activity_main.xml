@@ -9,37 +9,44 @@
     android:fitsSystemWindows="true"
     android:importantForAccessibility="yes"
     android:contentDescription="@string/app_name"
+    android:background="@color/background_light"
     tools:openDrawer="start">
 
+    <include layout="@layout/app_bar_main" />
     <!-- Main content: ConstraintLayout with TextView -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/editTextTextEmailAddress"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
-            android:layout_marginTop="760dp"
-            android:ems="10"
-            android:text="@string/email_address"
-            android:textSize="20sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
         <com.google.android.material.navigation.NavigationView
             android:id="@+id/nav_view"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_gravity="start"
-            android:contentDescription="@string/navigation_drawer_description"
-            android:fitsSystemWindows="true"
-            android:importantForAccessibility="yes"
+            android:background="@android:color/white"
             app:headerLayout="@layout/nav_header_main"
             app:menu="@menu/activity_main_drawer"
-            tools:layout_editor_absoluteX="-10dp"
-            tools:layout_editor_absoluteY="0dp" />
+            app:itemIconTint="#424242"
+            app:itemTextColor="#424242"
+            app:itemBackground="@drawable/fancy_button_background"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="parent"
+            app:layout_constraintWidth_percent="0.75">
+
+            <TextView
+                android:id="@+id/editTextTextEmailAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:layout_gravity="bottom"
+                android:text="@string/email_address"
+                android:textSize="14sp"
+                android:textColor="#757575"
+                android:drawableStart="@drawable/ic_email"
+                android:drawablePadding="8dp" />
+        </com.google.android.material.navigation.NavigationView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
